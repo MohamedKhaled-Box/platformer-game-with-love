@@ -1,0 +1,56 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "untitled.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 144.66666666666669,
+                "y": 70
+            }
+        },
+        "untitled.tmx#Metroidvania Brick Tile": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#country-platform-back": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "untitled.tmx#country-platform-forest": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#country-platform-tiles-example": {
+            "scaleInDock": 0.75
+        }
+    },
+    "last.exportedFilePath": "C:/Users/box/Desktop/love2d/map",
+    "last.imagePath": "C:/Users/box/Desktop/love2d/assets/country-platform-files/layers",
+    "map.height": 24,
+    "map.lastUsedExportFilter": "Lua files (*.lua)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 40,
+    "openFiles": [
+        "untitled.tmx"
+    ],
+    "project": "1.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "untitled.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
