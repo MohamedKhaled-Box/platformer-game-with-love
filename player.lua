@@ -1,4 +1,4 @@
-Player = {}
+local Player = {}
 
 function Player:load()
 
@@ -13,12 +13,21 @@ function Player:load()
     self.friction = 3500
     self.gravity = 1500
     self:loadAssets()
+    self:health()
     self:physics()
-
+    self.color = {
+        red = 1,
+        green = 1,
+        blue = 1,
+        speed = 3
+    }
 end
 function Player:sizeAndSpeed()
     self.x = 100
     self.y = 0
+    self.startX = self.x
+    self.startY = self.y
+    self.alive = true
     self.width = 20
     self.height = 60
     self.xVel = 0
@@ -33,6 +42,40 @@ function Player:physics()
     self.physics.body:setFixedRotation(true)
     self.physics.shape = love.physics.newRectangleShape(self.width, self.height)
     self.physics.fixture = love.physics.newFixture(self.physics.body, self.physics.shape)
+    self.physics.body:setGravityScale(0)
+end
+function Player:health()
+    self.health = {
+        current = 3,
+        max = 3
+    }
+end
+function Player:takeDamage(amount)
+    self:paintRed()
+    if self.health.current - amount > 0 then
+        self.health.current = self.health.current - amount
+    else
+        self.health.current = 0
+        Player:die()
+    end
+    print("hp" .. self.health.current)
+end
+function Player:die()
+    print("dead")
+    self.alive = false
+end
+
+function Player:respawn()
+    if self.alive == false then
+        self:spawn()
+        self.health.current = self.health.max
+        self.alive = true
+    end
+end
+
+function Player:spawn()
+    self.physics.body:setPosition(self.startX, self.startY)
+
 end
 
 function Player:countCoins()
@@ -79,7 +122,9 @@ function Player:loadAssets()
 end
 
 function Player:update(dt)
+    self:respawn()
     self:animate(dt)
+    self:resetColor(dt)
     self:changeDirection()
     self:changeState()
     self:syncPhysics()
@@ -107,6 +152,7 @@ function Player:changeDirection()
 end
 
 function Player:animate(dt)
+
     self.animation.timer = self.animation.timer + dt
     if self.animation.timer > self.animation.rate then
         self.animation.timer = 0
@@ -210,12 +256,27 @@ function Player:land(collision)
     self.graceTime = self.graceDuration
 end
 
+function Player:paintRed()
+    self.color.green = 0
+    self.color.blue = 0
+end
+function Player:resetColor(dt)
+    self.color.green = math.min(self.color.green + self.color.speed * dt, 1)
+    self.color.blue = math.min(self.color.blue + self.color.speed * dt, 1)
+    self.color.red = math.min(self.color.red + self.color.speed * dt, 1)
+end
+
 function Player:draw()
     --  love.graphics.rectangle("fill", self.x - self.width / 2, self.y - self.height / 2, self.width, self.height)
     local scaleX = 1
     if self.direction == "left" then
         scaleX = -1
     end
+    love.graphics.setColor(self.color.red, self.color.green, self.color.blue, 1) -- flash red when taking damge
+
     love.graphics.draw(self.animation.draw, self.x, self.y, 0, scaleX, 1, self.animation.width / 1.5,
         self.animation.height / 1.5)
+    love.graphics.setColor(1, 1, 1, 1) -- reset to normal color
+
 end
+return Player

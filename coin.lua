@@ -1,13 +1,23 @@
-Coin = {}
+local Sound = require("sound")
+
+local Coin = {
+    img = love.graphics.newImage("assets/coins/coin_01.png")
+}
 Coin.__index = Coin
-ActiveCoins = {}
+Coin.width = Coin.img:getWidth()
+Coin.height = Coin.img:getHeight()
+local ActiveCoins = {}
+local Player = require("player")
+
+function Coin:loadAudio()
+    Sound:init("collected", "sfx/player_get_coin.ogg", "static")
+end
+
 function Coin.new(x, y)
     local instance = setmetatable({}, Coin)
     instance.x = x
     instance.y = y
-    instance.img = love.graphics.newImage("assets/coins/coin_01.png")
-    instance.width = instance.img:getWidth()
-    instance.height = instance.img:getHeight()
+
     instance.scaleX = 1
     instance.randomTimeOffset = math.random(0, 100)
     instance.toBeRemoved = false
@@ -66,8 +76,19 @@ function Coin.beginContact(a, b, collision)
         if a == instance.physics.fixture or b == instance.physics.fixture then
             if a == Player.physics.fixture or b == Player.physics.fixture then
                 instance.toBeRemoved = true
+                Sound:play("collected", "sfx")
+
                 return true
             end
         end
     end
 end
+
+function Coin.removeAll()
+    for i, v in ipairs(ActiveCoins) do
+        v.physics.body:destroy()
+    end
+    ActiveCoins = {}
+end
+
+return Coin

@@ -3,19 +3,60 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "untitled.tmx",
+    "activeFile": "2.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
         "": {
             "scaleInDock": 1
         },
+        "2.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 315.66666666666663,
+                "y": 286.3333333333333
+            }
+        },
+        "2.tmx#Metroidvania Brick Tile": {
+            "scaleInDock": 1
+        },
+        "2.tmx#country-platform-back": {
+            "scaleInDock": 1
+        },
+        "2.tmx#country-platform-forest": {
+            "scaleInDock": 1
+        },
+        "2.tmx#country-platform-tiles-example": {
+            "scaleInDock": 1
+        },
+        "untitled - Copy.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 357.5,
+                "y": 282.5
+            }
+        },
+        "untitled - Copy.tmx#Metroidvania Brick Tile": {
+            "scaleInDock": 1
+        },
+        "untitled - Copy.tmx#country-platform-back": {
+            "scaleInDock": 1
+        },
+        "untitled - Copy.tmx#country-platform-forest": {
+            "scaleInDock": 1
+        },
+        "untitled - Copy.tmx#country-platform-tiles-example": {
+            "scaleInDock": 1
+        },
         "untitled.tmx": {
             "scale": 4,
-            "selectedLayer": 4,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 189.875,
-                "y": 225.125
+                "x": 960.125,
+                "y": 191.875
             }
         },
         "untitled.tmx#Metroidvania Brick Tile": {
@@ -41,12 +82,15 @@
     "map.tileWidth": 16,
     "map.width": 40,
     "openFiles": [
-        "untitled.tmx"
+        "untitled.tmx",
+        "2.tmx"
     ],
     "project": "1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "untitled.tmx"
+        "untitled.tmx",
+        "2.tmx",
+        "untitled - Copy.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
