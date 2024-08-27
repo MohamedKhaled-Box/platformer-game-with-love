@@ -1,4 +1,5 @@
 local Player = {}
+local Sound = require("sound")
 
 function Player:load()
 
@@ -36,6 +37,12 @@ function Player:sizeAndSpeed()
     self.maxSpeed = 200
     self.acceleration = 4000
 end
+function Player:loadAudio()
+    Sound:init("hit", "sfx/player_damage.ogg", "static")
+    Sound:init("jump", "sfx/player_jump.ogg", "static")
+    Sound:init("death", "sfx/player_death_escape.ogg", "static")
+end
+
 function Player:physics()
     self.physics = {}
     self.physics.body = love.physics.newBody(World, self.x, self.y, "dynamic")
@@ -54,14 +61,14 @@ function Player:takeDamage(amount)
     self:paintRed()
     if self.health.current - amount > 0 then
         self.health.current = self.health.current - amount
+        Sound:play("hit", "sfx")
     else
         self.health.current = 0
         Player:die()
+        Sound:play("death", "sfx")
     end
-    print("hp" .. self.health.current)
 end
 function Player:die()
-    print("dead")
     self.alive = false
 end
 
@@ -89,7 +96,7 @@ function Player:loadAssets()
     }
 
     self.animation.run = {
-        total = 8,
+        total = 10,
         current = 1,
         img = {}
     }
@@ -98,7 +105,7 @@ function Player:loadAssets()
     end
 
     self.animation.idle = {
-        total = 10,
+        total = 7,
         current = 1,
         img = {}
     }
@@ -107,7 +114,7 @@ function Player:loadAssets()
     end
 
     self.animation.air = {
-        total = 12,
+        total = 10,
         current = 1,
         img = {}
     }
@@ -191,8 +198,11 @@ function Player:jump(key)
         if self.onGround or self.graceTime > 0 then
             self.yVel = self.jumpHeight
             self.onGround = false
+            Sound:play("jump", "sfx")
             self.graceTime = 0
         elseif self.canDoubleJump == true then
+            Sound:play("jump", "sfx")
+
             self.canDoubleJump = false
             self.yVel = self.jumpHeight * 0.6
         end

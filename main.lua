@@ -11,6 +11,8 @@ local Sound = require("sound")
 
 function love.load()
     Coin:loadAudio()
+    Player:loadAudio()
+    Map:loadAudio()
     Enemy.loadAssets()
     Map:load()
     Player:load()

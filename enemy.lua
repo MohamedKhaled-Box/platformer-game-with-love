@@ -9,7 +9,7 @@ function Enemy.new(x, y)
     instance.r = 0
     instance.y = y
     instance.rageCounter = 0
-    instance.rageTrigger = 3
+    instance.rageTrigger = 2
     instance.speed = 100
     instance.xVel = instance.speed
     instance.speedMod = 1

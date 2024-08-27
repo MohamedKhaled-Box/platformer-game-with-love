@@ -4,19 +4,29 @@ local Coin = require("coin")
 local Spike = require("spike")
 local Crate = require("crate")
 local Enemy = require("enemy")
+local Sound = require("sound")
 local Player = require("player")
 
 function Map:load()
     self.currentLevel = 1
     World = love.physics.newWorld(0, 1500)
+    Sound:play("music", "sfx")
     World:setCallbacks(beginContact, endContact)
     self:init()
 
 end
+function Map:loadAudio()
+    Sound:init("music", "sfx/background.ogg", "static")
+
+end
 
 function Map:init()
-    self.level = STI("map/" .. self.currentLevel .. ".lua", {"box2d"})
-
+    if self.currentLevel < 5 then
+        self.level = STI("map/" .. self.currentLevel .. ".lua", {"box2d"})
+    else
+        self.currentLevel = 1
+        self.level = STI("map/" .. self.currentLevel .. ".lua", {"box2d"})
+    end
     self.level:box2d_init(World)
     self.solidLayer = self.level.layers.solid
     self.grassLayer = self.level.layers.grass
