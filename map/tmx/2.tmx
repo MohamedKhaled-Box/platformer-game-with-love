@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="120" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="222">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="120" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="233">
  <editorsettings>
   <export target="../2.lua" format="lua"/>
  </editorsettings>
@@ -159,10 +159,6 @@
 </data>
  </layer>
  <objectgroup color="#ffff00" id="6" name="objects">
-  <object id="97" name="Spikes" type="spikes" x="765" y="317" width="32" height="32"/>
-  <object id="103" name="Spikes" type="spikes" x="928.667" y="314.333" width="32" height="32"/>
-  <object id="129" name="Crate" type="crate" x="680" y="237.333" width="34" height="34"/>
-  <object id="130" name="Crate" type="crate" x="848.667" y="308.667" width="34" height="34"/>
   <object id="131" name="Coin" type="coin" x="1145" y="328.5">
    <ellipse/>
   </object>
@@ -274,7 +270,6 @@
   <object id="181" name="Coin" type="coin" x="1858.08" y="198.583">
    <ellipse/>
   </object>
-  <object id="182" name="Crate" type="crate" x="1545.58" y="232.083" width="34" height="34"/>
   <object id="184" name="Enemy" type="enemy" x="1723.75" y="260.583">
    <point/>
   </object>
@@ -293,15 +288,16 @@
   <object id="208" name="Coin" type="coin" x="562" y="291.333">
    <ellipse/>
   </object>
-  <object id="209" name="Spikes" type="spikes" x="319.333" y="320" width="32" height="32"/>
-  <object id="210" name="Spikes" type="spikes" x="355.333" y="315.333" width="32" height="32"/>
-  <object id="211" name="Spikes" type="spikes" x="396.667" y="318" width="32" height="32"/>
-  <object id="212" name="Spikes" type="spikes" x="428" y="318.667" width="32" height="32"/>
-  <object id="213" name="Spikes" type="spikes" x="465.333" y="318.667" width="32" height="32"/>
-  <object id="214" name="Spikes" type="spikes" x="494.667" y="318.667" width="32" height="32"/>
-  <object id="215" name="Spikes" type="spikes" x="533.333" y="316" width="32" height="32"/>
-  <object id="216" name="Spikes" type="spikes" x="576" y="317.333" width="32" height="32"/>
-  <object id="217" name="Spikes" type="spikes" x="609.333" y="316" width="32" height="32"/>
+  <object id="222" name="Crate" type="crate" x="1514" y="223" width="40" height="40"/>
+  <object id="223" name="Spikes" type="spikes" x="322" y="311.5" width="64" height="32"/>
+  <object id="224" name="Spikes" type="spikes" x="387.5" y="310" width="64" height="32"/>
+  <object id="225" name="Spikes" type="spikes" x="453.5" y="309.5" width="64" height="32"/>
+  <object id="226" name="Spikes" type="spikes" x="519.5" y="309.5" width="64" height="32"/>
+  <object id="227" name="Spikes" type="spikes" x="585.5" y="310" width="64" height="32"/>
+  <object id="228" name="Spikes" type="spikes" x="748" y="311.333" width="64" height="32"/>
+  <object id="229" name="Crate" type="crate" x="852" y="297" width="40" height="40"/>
+  <object id="230" name="Crate" type="crate" x="658" y="244" width="40" height="40"/>
+  <object id="232" name="Spikes" type="spikes" x="934" y="308" width="64" height="32"/>
  </objectgroup>
  <objectgroup color="#00aa00" id="7" name="solid">
   <object id="39" x="2" y="344" width="1923" height="40">

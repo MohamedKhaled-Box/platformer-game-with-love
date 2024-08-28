@@ -11,6 +11,7 @@ function Player:load()
     self.graceTime = 0
     self.graceDuration = 0.1
     self.coins = 0
+    self.deathCounter = 0
     self.friction = 3500
     self.gravity = 1500
     self:loadAssets()
@@ -70,6 +71,7 @@ function Player:takeDamage(amount)
 end
 function Player:die()
     self.alive = false
+    self.deathCounter = self.deathCounter + 1
 end
 
 function Player:respawn()
@@ -194,18 +196,23 @@ function Player:decreaseGraceTime(dt)
 end
 
 function Player:jump(key)
-    if (key == "w" or key == "up") then
+    if (key == "w" or key == "up" or key == "space") then
         if self.onGround or self.graceTime > 0 then
             self.yVel = self.jumpHeight
             self.onGround = false
-            Sound:play("jump", "sfx")
+            Sound:play("jump", "sfx", 0.2)
             self.graceTime = 0
         elseif self.canDoubleJump == true then
-            Sound:play("jump", "sfx")
-
+            Sound:play("jump", "sfx", 0.2)
             self.canDoubleJump = false
             self.yVel = self.jumpHeight * 0.6
         end
+    end
+end
+function Player:resetPostion(key)
+    if key == "r" then
+        self:spawn()
+
     end
 end
 

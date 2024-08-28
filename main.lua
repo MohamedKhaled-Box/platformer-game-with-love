@@ -48,6 +48,7 @@ end
 
 function love.keypressed(key)
     Player:jump(key)
+    Player:resetPostion(key)
 
 end
 
