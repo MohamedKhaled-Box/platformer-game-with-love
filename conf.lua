@@ -1,5 +1,5 @@
 function love.conf(t)
-    t.title = "Platformer"
+    t.title = "in the forest"
     t.versoin = "11.3"
     t.console = false
     t.window.width = 1280

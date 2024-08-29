@@ -284,7 +284,6 @@ function Player:resetColor(dt)
 end
 
 function Player:draw()
-    --  love.graphics.rectangle("fill", self.x - self.width / 2, self.y - self.height / 2, self.width, self.height)
     local scaleX = 1
     if self.direction == "left" then
         scaleX = -1

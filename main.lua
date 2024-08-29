@@ -17,7 +17,6 @@ function love.load()
     Map:load()
     Player:load()
     GUI:load()
-    -- background = love.graphics.newImage("assets/country-platform-files/layers/country-platform-back.png")
 end
 
 function love.update(dt)
@@ -34,7 +33,6 @@ function love.update(dt)
 end
 
 function love.draw()
-    -- love.graphics.draw(background)
     Map.level:draw(-Camera.x, -Camera.y, Camera.scale, Camera.scale)
     Camera:apply()
     Player:draw()

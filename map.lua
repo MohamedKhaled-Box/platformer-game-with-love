@@ -31,7 +31,6 @@ function Map:init()
         Player.health.current = Player.health.max
         self.level = STI("map/" .. self.currentLevel .. ".lua", {"box2d"})
     end
-    -- self.level = STI("map/4.lua", {"box2d"})
     self.level:box2d_init(World)
     self.solidLayer = self.level.layers.solid
     self.grassLayer = self.level.layers.grass
