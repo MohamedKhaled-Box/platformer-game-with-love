@@ -10,7 +10,7 @@ local Player = require("player")
 function Map:load()
     self.currentLevel = 1
     World = love.physics.newWorld(0, 1500)
-    loopSound = Sound:play("music", "sfx", 0.4)
+    loopSound = Sound:play("music", "sfx", 0.15)
     loopSound:setLooping(true)
     World:setCallbacks(beginContact, endContact)
     self:init()

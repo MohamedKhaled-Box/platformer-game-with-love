@@ -14,8 +14,8 @@
         },
         "2.tmx": {
             "expandedObjectLayers": [
-                7,
-                6
+                6,
+                7
             ],
             "scale": 0.5,
             "selectedLayer": 6,
@@ -41,8 +41,8 @@
         },
         "3.tmx": {
             "expandedObjectLayers": [
-                7,
-                6
+                6,
+                7
             ],
             "scale": 0.5,
             "selectedLayer": 5,
@@ -74,8 +74,8 @@
         },
         "4.tmx": {
             "expandedObjectLayers": [
-                7,
-                6
+                6,
+                7
             ],
             "scale": 0.75,
             "selectedLayer": 5,
@@ -107,8 +107,8 @@
         },
         "5.tmx": {
             "expandedObjectLayers": [
-                7,
-                6
+                6,
+                7
             ],
             "scale": 1,
             "selectedLayer": 5,
@@ -143,14 +143,14 @@
         },
         "6.tmx": {
             "expandedObjectLayers": [
-                7,
-                6
+                6,
+                7
             ],
             "scale": 1.5,
             "selectedLayer": 5,
             "viewCenter": {
                 "x": 662.6666666666666,
-                "y": 116.66666666666663
+                "y": 204.66666666666663
             }
         },
         "6.tmx#Metroidvania Brick Tile": {
@@ -205,14 +205,14 @@
         },
         "untitled.tmx": {
             "expandedObjectLayers": [
-                7,
-                6
+                6,
+                7
             ],
             "scale": 0.75,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 908,
-                "y": 163.99999999999994
+                "x": 986.6666666666666,
+                "y": 191.33333333333331
             }
         },
         "untitled.tmx#Metroidvania Brick Tile": {

@@ -62,11 +62,11 @@ function Player:takeDamage(amount)
     self:paintRed()
     if self.health.current - amount > 0 then
         self.health.current = self.health.current - amount
-        Sound:play("hit", "sfx")
+        Sound:play("hit", "sfx", 0.2)
     else
         self.health.current = 0
         Player:die()
-        Sound:play("death", "sfx")
+        Sound:play("death", "sfx", 0.2)
     end
 end
 function Player:die()
@@ -89,6 +89,7 @@ end
 
 function Player:countCoins()
     self.coins = self.coins + 1
+    self:paintGold()
 end
 
 function Player:loadAssets()
@@ -277,6 +278,13 @@ function Player:paintRed()
     self.color.green = 0
     self.color.blue = 0
 end
+
+function Player:paintGold()
+    self.color.red = 255
+    self.color.green = 215
+    self.color.blue = 0
+end
+
 function Player:resetColor(dt)
     self.color.green = math.min(self.color.green + self.color.speed * dt, 1)
     self.color.blue = math.min(self.color.blue + self.color.speed * dt, 1)
