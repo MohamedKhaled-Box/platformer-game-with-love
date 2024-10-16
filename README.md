@@ -4,7 +4,7 @@ In the Forest: A Platformer Game
 
 ## Video demo
 
-url
+url https://youtu.be/6hTugEwszec
 
 ### Description
 
